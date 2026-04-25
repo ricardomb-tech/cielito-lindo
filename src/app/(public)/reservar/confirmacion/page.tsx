@@ -1,0 +1,1 @@
+export default function Placeholder() { return <div className="p-24 text-center"><h1>En construcción...</h1></div>; }

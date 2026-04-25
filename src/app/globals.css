@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 49 100% 98%; /* #FAFAF7 */
+    --foreground: 144 26% 12%; /* #1a2e22 */
+
+    --card: 49 100% 98%;
+    --card-foreground: 144 26% 12%;
+
+    --popover: 49 100% 98%;
+    --popover-foreground: 144 26% 12%;
+
+    --primary: 153 40% 30%; /* #2d6a4f */
+    --primary-foreground: 49 100% 98%;
+    
+    --secondary: 42 41% 91%; /* #f0ebe1 */
+    --secondary-foreground: 144 26% 12%;
+
+    --muted: 42 41% 91%;
+    --muted-foreground: 144 26% 30%;
+
+    --accent: 147 38% 41%; /* #40916c */
+    --accent-foreground: 49 100% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 49 100% 98%;
+
+    --border: 41 29% 80%; /* #d4c9b5 */
+    --input: 41 29% 80%;
+    --ring: 153 40% 30%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 144 26% 8%;
+    --foreground: 49 100% 98%;
+
+    --card: 144 26% 10%;
+    --card-foreground: 49 100% 98%;
+
+    --popover: 144 26% 10%;
+    --popover-foreground: 49 100% 98%;
+
+    --primary: 147 38% 41%;
+    --primary-foreground: 49 100% 98%;
+
+    --secondary: 144 26% 15%;
+    --secondary-foreground: 49 100% 98%;
+
+    --muted: 144 26% 15%;
+    --muted-foreground: 41 29% 80%;
+
+    --accent: 153 40% 30%;
+    --accent-foreground: 49 100% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 49 100% 98%;
+
+    --border: 144 26% 20%;
+    --input: 144 26% 20%;
+    --ring: 147 38% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Previene parpadeo durante la navegación */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  /* Aceleración GPU para elementos animados */
+  [data-motion],
+  .will-change-transform {
+    will-change: transform;
+  }
+  /* Optimiza imágenes para no bloquear el hilo principal */
+  img {
+    content-visibility: auto;
+  }
+}
+
